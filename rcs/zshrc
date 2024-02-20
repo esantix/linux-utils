@@ -1,0 +1,15 @@
+export ZSH="$HOME/.oh-my-zsh.sh"
+
+ZSH_THEME="robbyrussell"
+
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+
+# ALIASES
+alias tf=terraform
+alias k=kubectl
+alias kl="kubectl logs"
+alias kgp="kubectl get pods"
+
+alias python=python3
+alias pip=pip3

@@ -1,0 +1,8 @@
+[distutils]
+index-servers =
+    esantix-packages
+
+[esantix-packages]
+repository = https://gitlab.com/api/v4/projects/esantix%2Fesantix-packages/packages/pypi  
+username = 
+password = 
