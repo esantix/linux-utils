@@ -10,7 +10,7 @@ tools=(
     "oh-my-zsh"
     "fzy"
     # "vscode"
-    # "docker-desktop"
+    # "docker-desktop"tt
     )
 
 for tool in ${tools[@]}; do
