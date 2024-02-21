@@ -1,7 +1,0 @@
-aws-cli
-terraform
-kubectl
-k9s
-yq
-jq
-oh-my-zsh
