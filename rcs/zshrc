@@ -13,3 +13,9 @@ alias kgp="kubectl get pods"
 
 alias python=python3
 alias pip=pip3
+
+alias gs="git status"
+alias gad="git add *"
+alias gc="git commit -m"
+alias gpush="git push"
+alias gpull="git pull"
