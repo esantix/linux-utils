@@ -8,8 +8,10 @@ tools=(
     "yq"
     "jq"
     "oh-my-zsh"
+    "fzy"
+    # "vscode"
+    # "docker-desktop"
     )
-
 
 for tool in ${tools[@]}; do
     echo "apt install $tool"
