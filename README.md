@@ -1,2 +1,2 @@
 # linux-utils
-Colletion of personal useful linux files
+Collection of personal useful linux files
