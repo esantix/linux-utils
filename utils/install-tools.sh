@@ -9,6 +9,7 @@ tools=(
     "jq"
     "oh-my-zsh"
     "fzy"
+    "shfmt"
     # "vscode"
     # "docker-desktop"tt
     )
