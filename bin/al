@@ -1,13 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 
-aws_profiles=$(cat "$HOME/.aws/config" | grep -o -E 'sso-[0-9]{12}' )
+aws_profiles=$(cat "$HOME/.aws/config" | sed -n 's/^\[profile \([^]]*\)\]/\1/p' )
 profile=$(printf "%s\n" "${aws_profiles[@]}" | fzy )
-
+echo "Chosen profile: $profile"
 if [[ -z $profile ]]; then
     echo "No profile chosen. Exiting..."
     exit 1
 else
+    export AWS_DEFAULT_PROFILE=$profile
     export AWS_PROFILE=$profile
     aws sso login --profile "$profile"
-    echo "Logged to $AWS_PROFILE"
+    echo "Logged to $profile"
 fi

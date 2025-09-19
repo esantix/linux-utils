@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+isort . 2> /dev/null 
+flake8 . 
+black8 . 2> /dev/null
+
+terraform format 2> /dev/null

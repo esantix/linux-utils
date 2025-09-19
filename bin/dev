@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -f "devspace.local.yaml" ]; then
+    echo "File devspace.local.yaml exists."
+    echo "Running: devspace dev --config devspace.local.yaml"
+    devspace dev --config devspace.local.yaml
+else
+    echo "File devspace.local.yaml does not exist."
+    devspace dev
+fi

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+sf_connection=$(cat "$HOME/.snowflake/config.toml" | sed -n 's/^\[connections.\([^]]*\)\]/\1/p' )
+connection=$(printf "%s\n" "${sf_connection[@]}" | fzy )
+
+echo "Chosen profile: $connection"
+if [[ -z $connection ]]; then
+    echo "No profile connection. Exiting..."
+    exit 1
+else
+    snowsql --connection "$connection" --config "$HOME/.snowflake/config.toml"
+fi
