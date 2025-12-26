@@ -1,1 +1,29 @@
-black .
+#!/usr/bin/bash
+
+log_err(){
+    echo -e "\e[31mERROR:\e[0m $1"
+}
+
+
+# Check branch isn't main or master
+blocked_branches="main master"
+current_branch=$( git rev-parse --abbrev-ref HEAD )
+
+if echo "$blocked_branches" | grep -w -q "$current_branch"; then
+    log_err "Branches \e[1m$blocked_branches\e[0m are blocked for direct commit"
+    exit 1
+fi
+
+# Check formating errors
+flake8_out=$(python -m flake8 --ignore=W)
+if [ -n "$flake8_out" ]; then
+    log_err "flake8 found error/s"
+    echo "$flake8_out"
+    
+    echo ""
+    read -p "Format with black? [y/N]: " run_black
+    if [ "$run_black" == "y" ]; then
+        black .
+    fi
+    exit 1
+fi
